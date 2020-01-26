@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>
+        Home
+    </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- semantic ui cdn -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <style>
+        h2 {
+            font-family: 'Lucida Sans', 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+        }
+        
+        .caption {
+            text-transform: uppercase;
+            color: steelblue;
+            font-weight: 400;
+        }
+        
+        a {
+            font-size: 20px;
+        }
+        
+        @import "bourbon";
+        .wrapper {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        
+        .form-signin {
+            max-width: 380px;
+            padding: 15px 35px 45px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-signin-heading,
+        .checkbox {
+            margin-bottom: 30px;
+        }
+        
+        .checkbox {
+            font-weight: normal;
+        }
+        
+        .comment:hover {
+            background: rgba(0, 0, 0, 0.1);
+            border: 0px solid transparent;
+            border-radius: 2px;
+        }
+        
+        .comment {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"><span><img
+                            src="data:image/png;base64,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"
+                            width="30px"></span>POKEMONS</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <% if(!currentUser){ %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                        <% } else { %>
+                            <li><a href="#">
+
+                            Signed In as
+                            <%= currentUser.username%>
+                        </a>
+                            </li>
+                            <li><a href="/logout">Logout</a></li>
+                            <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="container">
+            <%console.log(err+" "+success)%>
+                <% if(err!=""){ %>
+                    <div class="ui negative message" id="errmess" role="alert">
+                        <i class="close icon" id="err"></i>
+                        <%=err%>
+                    </div>
+                    <%}else if(success!=""){%>
+                        <div class="ui success message" id="succmess" role="alert">
+                            <i class="close icon" id="succ"></i>
+                            <%=success%>
+                        </div>
+                        <%}%>
+        </div>

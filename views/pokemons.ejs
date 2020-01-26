@@ -1,0 +1,31 @@
+<% include partials/header %>
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Welcome to the PoKemon's page</h1>
+                <p>View your favourite pokemons here !!</p>
+                <p><a class="btn btn-lg btn-primary" href="/pokemon/new">Add a new pokemon</a></p>
+            </div>
+        </header>
+        <div class="row text-center" style="display: flex;flex-wrap: wrap">
+            <% pokemon.forEach(function(pok){ %>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h2>
+                                <%= pok.name%>
+                            </h2>
+                        </div>
+                        <img src="<%= pok.img %>" alt=" <%=pok.name%> ">
+                        <br>
+                        <div>
+                            <a href="/pokemon/<%=pok._id %>" class="btn btn-primary">More Info</a>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <%});%>
+        </div>
+    </div>
+    <% include partials/footer %>

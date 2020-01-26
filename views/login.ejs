@@ -1,0 +1,16 @@
+<% include ./partials/header %>
+    <div class="wrapper">
+
+        <form class="text-center border border-light p-5 form-signin" action="/login" method="POST" style="width: 30%;margin-left: 33%;">
+            <h1>Login</h1>
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="username" name="username">
+            <br>
+            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="password">
+            <br>
+            <button class="btn btn-info btn-block my-4" type="submit">Log in</button>
+            <br>
+            <p>Not a member?
+                <a href="/register">Register</a>
+            </p>
+        </form>
+    </div>

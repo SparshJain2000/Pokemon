@@ -1,0 +1,75 @@
+<% include partials/header %>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <p class="lead">Pokemon</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= pokemon.img %>" alt="<%= pokemon.name %>" style="width:70%">
+
+                <div class="caption-full">
+                    <h2>
+                        <strong><%= pokemon.name %></strong>
+                    </h2>
+                    <p>
+                        <%= pokemon.description %>
+                    </p>
+                    <p><em>Submitted by
+                        <%=pokemon.author.username%>
+                    </em>
+                    </p>
+                    <% if(currentUser && pokemon.author.id.equals(currentUser._id)){ %>
+                        <div class="ui buttons">
+                            <a class="small ui orange button" href="/pokemon/<%=pokemon._id%>/edit">Edit</a>
+                            <div class="or"></div>
+
+                            <form style="display:inline" action="/pokemon/<%=pokemon._id%>?_method=DELETE" method="POST">
+                                <button class="small ui red button">Delete</button>
+                            </form>
+                        </div>
+                        <%}%>
+                </div>
+
+                <div class="well">
+                    <div class="text-right">
+                        <a href="/pokemon/<%= pokemon._id %>/comments/new" class="medium ui green button">Add a
+                comment</a>
+                    </div>
+                    <hr>
+                    <% pokemon.comments.forEach(element => { %>
+
+                        <div class="row comment">
+                            <div class="col-md-12">
+                                <strong><%=element.author.username%></strong>
+                                <p>
+
+                                    <%= element.text %>
+                                </p>
+
+                                <% if(currentUser && element.author.id.equals(currentUser._id)){ %>
+
+                                    <a class="mini ui left attached orange button" href="/pokemon/<%=pokemon._id%>/comments/<%=element._id%>/edit">Edit</a>
+                                    <form style="display: inline;" action="/pokemon/<%=pokemon._id%>/comments/<%=element._id%>?_method=DELETE" method="POST">
+                                        <button class="right attached mini ui red button">Delete</button>
+                                    </form>
+
+                                    <%}%>
+                            </div>
+                        </div>
+                        <br>
+                        <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+        </div>
+    </div>
+
+    <% include partials/footer %>
