@@ -12,4 +12,4 @@
  ###### Clone the directory and run app.js file 
  ```javascript
  node app.js
- ```javascript
+ ```
