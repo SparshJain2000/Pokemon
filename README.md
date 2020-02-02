@@ -1,4 +1,4 @@
-# pokemon
+# Pokemon
  It is a Pokemons application. Users can add pokemons (name, image url, description) to it and can edit later by authentication. Users can comment on other pokemons and edit their comments.
  
 ## Technologies Used -
