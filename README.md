@@ -7,7 +7,7 @@
  ###### Authentication : Passport JS(Js library)
  ###### Front-end :HTML, CSS, JS, Semantic UI, Bootstrap
  
-## INSTALLATION:
+## Installation :
  ###### Install Nodejs and Mongo.
  ###### Clone the repository and run app.js file 
  ```javascript
