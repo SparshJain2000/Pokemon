@@ -9,7 +9,7 @@
  
 ## INSTALLATION:
  ###### Install Nodejs and Mongo.
- ###### Clone the directory and run app.js file 
+ ###### Clone the repository and run app.js file 
  ```javascript
  node app.js
  ```
