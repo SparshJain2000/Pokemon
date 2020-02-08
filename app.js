@@ -73,9 +73,7 @@ app.use("/pokemon/:id/comments", commentRoutes);
 // ];
 
 //=====================================================
-//Amet do est dolor irure nisi consectetur ad Lorem excepteur aute ex nisi laborum. Deserunt fugiat officia ex id culpa adipisicing ullamco ad consectetur in. Enim Lorem enim minim incididunt ipsum aute irure ut esse id incididunt ipsum quis labore. Ex est commodo velit pariatur mollit aute id incididunt amet exercitation in culpa. Nisi fugiat proident commodo ipsum pariatur deserunt cillum excepteur cillum commodo dolor.
 
-//var port = 3000;
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
     console.log("Pokemons have started !! at " + port);
