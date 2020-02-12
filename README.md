@@ -1,5 +1,5 @@
 # Pokemon
- It is a Pokemons application. Users can add pokemons (name, image url, description) to it and can edit later by authentication. Users can comment on other pokemons and edit their comments.
+ It is a Node application. User can add pokemons (name, image url, description) to it and can edit later by authentication. User can comment on other pokemons and edit their comments.
  
 ## Technologies Used -
  ###### Back-end : Node  js, Express JS
