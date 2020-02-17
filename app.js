@@ -26,6 +26,8 @@ app.use(flash());
 //for post routes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+
+//setting view engine as ejs
 app.set("view engine", "ejs");
 app.use(require("express-session")({
     secret: "Jain",
@@ -59,7 +61,7 @@ app.use("/pokemon/:id/comments", commentRoutes);
 
 
 //                  Sample Pokemons
-//=====================================================
+//===============================================================
 // Pokemon.create({ "name": "charizard", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891763-006charizard.png" }, );
 // var pokemon = [
 //     { "name": "pikachu", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/0/6087/2437349-pikachu.png" },
@@ -71,9 +73,9 @@ app.use("/pokemon/:id/comments", commentRoutes);
 //     { "name": "onix", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1891842-095onix.png" },
 //     { "name": "mewtwo", "img": "https://giantbomb1.cbsistatic.com/uploads/scale_small/13/135472/1895869-150mewtwo.png" }
 // ];
+//===============================================================
 
-//=====================================================
-
+//listening to port given by environment / 8080 if local environment
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
     console.log("Pokemons have started !! at " + port);
