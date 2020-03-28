@@ -7,9 +7,18 @@
  ###### Authentication : Passport JS
  ###### Front-end : HTML, CSS, JS, Semantic UI, Bootstrap
  
-## Installation :
- ###### Install Nodejs and Mongo.
- ###### Clone the repository and run app.js file 
- ```bash
- node app.js
- ```
+## Installation:
+  ###### Install mongoDB and NodeJS
+  ###### Clone the repository
+  ```bash
+  git clone https://github.com/SparshJain2000/Security-systems.git
+  ```
+  ###### Install node libraries
+  ```bash
+  npm install
+  ```
+  ###### run app.js file
+  ```bash
+  node app.js
+  ```
+ 
