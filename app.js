@@ -1,23 +1,28 @@
 var express = require("express"),
     app = express(),
-    methodOverride = require('method-override'),
+    methodOverride = require("method-override"),
     mongoose = require("mongoose"),
-    flash = require('connect-flash'),
+    flash = require("connect-flash"),
     bodyParser = require("body-parser"),
     Pokemon = require("./models/pokemon.js"),
     Comment = require("./models/comments"),
-    passport = require('passport'),
-    LocalStratergy = require('passport-local'),
-    User = require('./models/user')
+    passport = require("passport"),
+    LocalStratergy = require("passport-local"),
+    User = require("./models/user"),
+    env = require("dotenv");
+env.config();
 
 //Requiring ROUTES
-var pokemonRoutes = require('./routes/pokemons'),
-    commentRoutes = require('./routes/comments'),
-    indexRoutes = require('./routes/index');
+var pokemonRoutes = require("./routes/pokemons"),
+    commentRoutes = require("./routes/comments"),
+    indexRoutes = require("./routes/index");
 
 //Setting mongoose (Mongo DB)
 
-mongoose.connect("mongodb://localhost:27017/pokemon", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 //linking external files
 app.use(express.static(__dirname + "/public"));
@@ -25,15 +30,17 @@ app.use(express.static(__dirname + "/public"));
 app.use(flash());
 //for post routes
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 
 //setting view engine as ejs
 app.set("view engine", "ejs");
-app.use(require("express-session")({
-    secret: "Jain",
-    resave: false,
-    saveUninitialized: false
-}));
+app.use(
+    require("express-session")({
+        secret: "Jain",
+        resave: false,
+        saveUninitialized: false
+    })
+);
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     res.locals.err = req.flash("error");
@@ -58,7 +65,6 @@ app.get("/", function(req, res) {
 app.use("/", indexRoutes);
 app.use("/pokemon", pokemonRoutes);
 app.use("/pokemon/:id/comments", commentRoutes);
-
 
 //                  Sample Pokemons
 //===============================================================
