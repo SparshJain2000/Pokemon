@@ -8,16 +8,22 @@
  ###### Front-end : HTML, CSS, JS, Semantic UI, Bootstrap
  
 ## Installation:
-  ###### Install mongoDB and NodeJS
-  ###### Clone the repository
+  #### Install mongoDB and NodeJS
+  #### Clone the repository
   ```bash
   git clone https://github.com/SparshJain2000/Security-systems.git
   ```
-  ###### Install node libraries
+  #### Install node libraries
   ```bash
   npm install
   ```
-  ###### run app.js file
+  #### Declare environment variables
+  ###### Create a file .env
+  ```txt
+  MONGO_URI = 'Your mongo url'
+  SECRET = 'secret for Passport'
+  ```
+  #### Start the server (run app.js file)
   ```bash
   node app.js
   ```
